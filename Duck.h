@@ -19,12 +19,12 @@ class Duck
     }
 
     void setFlyBehavior(FlyBehavior *newFlyB){
-       free(flyB);
+       delete flyB;
        flyB = newFlyB;
     }
  
     void setQuackBehavior(QuackBehavior *newQuackB){
-       free(quackB);
+       delete quackB;
        quackB = newQuackB;
     }
 
@@ -34,6 +34,11 @@ class Duck
 
     void makeDuckQuack(){
        quackB->quack();
+    }
+
+    ~Duck(){
+       delete flyB;
+       delete quackB;
     }
 
   private:

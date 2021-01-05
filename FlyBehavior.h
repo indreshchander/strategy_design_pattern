@@ -6,6 +6,9 @@
 class FlyBehavior{
   public:
     virtual void fly() = 0;
+
+    virtual ~FlyBehavior(){
+    }    
 };
 
 class NormalFly:public FlyBehavior
